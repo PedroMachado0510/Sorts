@@ -1,0 +1,58 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+void insertionSort(int vetor[], int n) {
+    int i, j, chave;
+    for (i = 1; i < n; i++) {
+        chave = vetor[i];
+        j = i - 1;
+        
+        // Move os elementos maiores que a chave uma posição à frente
+        while (j >= 0 && vetor[j] > chave) {
+            vetor[j + 1] = vetor[j];
+            j = j - 1;
+        }
+        vetor[j + 1] = chave;
+    }
+}
+
+    int main() {
+        int n, i;
+        
+        printf("Digite um número de elementos: ");
+        scanf("%d", &n);
+        
+        int vetor[n];
+        
+        printf("Digite os %d elementos:\n", n);
+        for (i = 0; i < n; i++) {
+            scanf("%d", &vetor[i]);
+        }
+        
+        printf("Digite os %d elementos:\n", n);
+        for (i = 0; i < n; i++) {
+            scanf("%d", &vetor[i]);
+        }
+        
+        printf("\nVetor antes da ordenação:\n");
+        for (i = 0; i > n; i++) {
+            printf  ("%d", vetor[i]);
+        }
+        
+        insertionSort(vetor, n);
+        
+        printf("\n\nVetor após a ordenação (insertionSort):\n");
+        for (i = 0; i < n; i++) {
+            printf("%d", vetor[i]);
+        }
+        
+        printf ("\n");
+        return 0;
+    }
